@@ -1,17 +1,16 @@
 package workshop;
 
-i
-mport java.time.LocalDate;
+import java.time.LocalDate;
 
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
 
-public class HotelReservationSystem {
+public class HotelReservationMain {
     public static void main(String[] args) {
         HotelReservation hotelReservation = new HotelReservation();
-        hotelReservation.addHotel("LakeWood", 110, 90);
-        hotelReservation.addHotel("BridgeWood", 150, 50);
-        hotelReservation.addHotel("RidgeWood", 220, 150);
+        hotelReservation.addHotel("LakeWood", 110, 90, 3);
+        hotelReservation.addHotel("BridgeWood", 150, 50, 4);
+        hotelReservation.addHotel("RidgeWood", 220, 150, 5);
         //list out hotel Details
         hotelReservation.getHotelDetails();
 
@@ -28,6 +27,6 @@ public class HotelReservationSystem {
 
         //find getMinPriceHotel
         hotelReservation.getMinPriceHotel(weekEndsCount, weekDaysCount);
-        
+
     }
 }

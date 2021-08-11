@@ -1,4 +1,5 @@
 package workshop;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -34,28 +35,41 @@ class Hotel{
                 "hotelName='" + hotelName + '\'' +
                 ",hotelPriceWeekDays=" + hotelPriceWeekDays +
                 ",hotelPriceWeekEnds=" + hotelPriceWeekEnds +
+                ", hotelRating= "+ hotelRating+
                 '}'+"\n";
     }
 
-    public Hotel(String hotelName, int hotelPriceWeekDays, int hotelPriceWeekEnds) {
+    public Hotel(String hotelName, int hotelPriceWeekDays, int hotelPriceWeekEnds, int hotelRating) {
         this.hotelName = hotelName;
         this.hotelPriceWeekDays = hotelPriceWeekDays;
         this.hotelPriceWeekEnds = hotelPriceWeekEnds;
+        this.hotelRating = hotelRating;
     }
 
     private String hotelName;
     private int hotelPriceWeekDays;
     private int hotelPriceWeekEnds;
+    private int hotelRating;
+
+    public int getHotelRating() {
+        return hotelRating;
+    }
+
+    public void setHotelRating(int hotelRating) {
+        this.hotelRating = hotelRating;
+    }
+
+
 
 }
 
 //this class will do booking hotels and list of hotels and finding weekdays count and finding best rate hotel
-public class HotelReservation extends Hotel {
+class HotelReservation extends Hotel {
     public ArrayList<Hotel> hotelDetails = new ArrayList<Hotel>();
 
     //ooking hotels and list of hotels
-    public void addHotel(String hotelName, int hotelPriceWeekDays, int hotelPriceWeekEnds) {
-        Hotel adder = new Hotel(hotelName, hotelPriceWeekDays, hotelPriceWeekEnds);
+    public void addHotel(String hotelName, int hotelPriceWeekDays, int hotelPriceWeekEnds, int hotelRating) {
+        Hotel adder = new Hotel(hotelName, hotelPriceWeekDays, hotelPriceWeekEnds, hotelRating);
         hotelDetails.add(adder);
     }
     public void getHotelDetails(){
